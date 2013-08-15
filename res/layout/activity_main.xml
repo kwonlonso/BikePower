@@ -1,16 +1,242 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Main" >
+    android:layout_alignParentTop="true"
+    android:layout_toRightOf="@+id/textView1"
+    android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/tvMainPower"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/Power" />
+
+        <TextView
+            android:id="@+id/tvMainPowerRes"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/PowerRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvMainPowerUnits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/PowerUnits" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/tvMainSpeed"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/Speed" />
+
+        <TextView
+            android:id="@+id/tvMainSpeedRes"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/SpeedRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvMainSpeedUnits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/SpeedUnits" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/tvMainDistance"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/Distance" />
+
+        <TextView
+            android:id="@+id/tvMainDistanceRes"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DistanceRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvMainDistanceUnits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/DistanceUnits" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/tvMainTime"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/Time" />
+
+        <TextView
+            android:id="@+id/tvMainTimeHrsRes"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="@string/TimeHrsRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvMainTimeUnitsHrs"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/TimeUnitsHrs" />
+
+        <TextView
+            android:id="@+id/tvMainTimeMinsRes"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="@string/TimeMinsRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvMainTimeUnitsMins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/TimeUnitsMins" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/tvMainCadence"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/Cadence" />
+
+        <TextView
+            android:id="@+id/tvMainCadenceRes"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/CadenceRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvMainCadenceUnits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/CadenceUnits" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/tvMainCalories"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/Calories" />
+
+        <TextView
+            android:id="@+id/tvMainCaloriesRes"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/CaloriesRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvMainCaloriesUnits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/CaloriesUnits" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/tvMainSeparator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/DotsDashes"
+            android:textColor="#0000FF" />
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal" >
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvMainAlerts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="GPS !!" />
+
+        <TextView
+            android:id="@+id/tvMainParams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMainAlerts"
+            android:layout_margin="10dp"
+            android:text="Altitude CycleWeight Temperature WindSpeed RiderWeight RiderHeight" />
+        
+    </RelativeLayout>
+
+</LinearLayout>
