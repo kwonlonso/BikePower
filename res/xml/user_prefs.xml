@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:key="@string/prefsUserName"
+        android:title="Your Name" 
+        android:summary="-" />
+
+    <EditTextPreference
+        android:key="@string/prefsUserHeight"
+        android:title="Your Height" />
+
+    <EditTextPreference
+        android:key="@string/prefsUserWeight"
+        android:title="Your Weight" />
+
+    <EditTextPreference
+        android:key="@string/prefsAirTemp"
+        android:title="Current temperature" />
+
+    <EditTextPreference
+        android:key="@string/prefsAltitude"
+        android:title="Height above sea level" />
+
+    <EditTextPreference
+        android:key="@string/prefsWindSpeed"
+        android:title="Wind Speed" />
+
+    <EditTextPreference
+        android:key="@string/prefsSlope"
+        android:title="Slope" />
+    
+    <EditTextPreference
+        android:key="@string/prefsBikeWeight"
+        android:title="Weight of Bike" />
+
+</PreferenceScreen>

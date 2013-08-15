@@ -3,6 +3,8 @@
 
     <string name="app_name">BikePower</string>
     <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_about">About Bike Power</string>
     <string name="Power">Power</string>
     <string name="Speed">Speed</string>
     <string name="Distance">Distance</string>
@@ -24,5 +26,14 @@
     <string name="CadenceRes">0</string>
     <string name="CaloriesRes">0</string>
     <string name="DotsDashes">..................................</string>
+    <string name="AboutBikePower">Bike Power is a free application to calculate various parameters during your bicycle ride. Open source software made by Ashwin Upadhyaya.</string>
+    <string name="prefsUserName">prefsUserName</string>
+    <string name="prefsUserHeight">prefsUserHeight</string>
+    <string name="prefsUserWeight">prefsUserWeight</string>
+    <string name="prefsAirTemp">prefsAirTemp</string>
+    <string name="prefsAltitude">prefsAltitude</string>
+    <string name="prefsWindSpeed">prefsWindSpeed</string>
+    <string name="prefsSlope">prefsSlope</string>
+    <string name="prefsBikeWeight">prefsBikeWeight</string>
     
 </resources>
