@@ -33,5 +33,9 @@
     <EditTextPreference
         android:key="@string/prefsBikeWeight"
         android:title="Weight of Bike" />
+    
+    <EditTextPreference
+        android:key="@string/prefsCadence"
+        android:title="Pedalling Cadence" />
 
 </PreferenceScreen>

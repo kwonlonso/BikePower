@@ -35,5 +35,6 @@
     <string name="prefsWindSpeed">prefsWindSpeed</string>
     <string name="prefsSlope">prefsSlope</string>
     <string name="prefsBikeWeight">prefsBikeWeight</string>
+    <string name="prefsCadence">prefsCadence</string>
     
 </resources>
