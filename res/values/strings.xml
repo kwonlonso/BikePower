@@ -14,8 +14,6 @@
     <string name="PowerUnits">Watts</string>
     <string name="SpeedUnits">kmph</string>
     <string name="DistanceUnits">kms</string>
-    <string name="TimeUnitsHrs">Hrs</string>
-    <string name="TimeUnitsMins">Mins</string>
     <string name="CadenceUnits">rpm</string>
     <string name="CaloriesUnits">kCals</string>
     <string name="PowerRes">0</string>
@@ -23,6 +21,9 @@
     <string name="DistanceRes">0</string>
     <string name="TimeHrsRes">00</string>
     <string name="TimeMinsRes">00</string>
+    <string name="TimeSecsRes">00</string>
+    <string name="TimeMillisRes">00</string>
+    <string name="ColonSeparator">:</string>
     <string name="CadenceRes">0</string>
     <string name="CaloriesRes">0</string>
     <string name="DotsDashes">..................................</string>

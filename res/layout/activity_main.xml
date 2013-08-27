@@ -117,12 +117,11 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/tvMainTimeUnitsHrs"
-            android:layout_width="30dp"
+            android:layout_width="10dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:text="@string/TimeUnitsHrs" />
+            android:text="@string/ColonSeparator" />
 
         <TextView
             android:id="@+id/tvMainTimeMinsRes"
@@ -132,13 +131,33 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/tvMainTimeUnitsMins"
-            android:layout_width="wrap_content"
+            android:layout_width="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/TimeUnitsMins" />
-    </LinearLayout>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/ColonSeparator" />
+
+        <TextView
+            android:id="@+id/tvMainTimeSecsRes"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="@string/TimeSecsRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/ColonSeparator" />
+
+        <TextView
+            android:id="@+id/tvMainTimeMillisRes"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="@string/TimeMillisRes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -223,9 +242,16 @@
         android:gravity="center_horizontal" >
 
         <TextView
+            android:id="@+id/tvMainCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" />
+        
+        <TextView
             android:id="@+id/tvMainAlerts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMainCurrentTime"
             android:layout_margin="10dp"
             android:text="GPS !!" />
 
