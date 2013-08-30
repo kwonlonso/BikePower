@@ -1,5 +1,10 @@
 package com.ashwinupadhyaya.bikepower;
 
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 
 import android.location.GpsStatus.Listener;
@@ -7,6 +12,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.app.Activity;
@@ -38,11 +44,13 @@ public class Main extends Activity implements SensorEventListener,
 	long locTim, accTim, initTim, elapsedTim;
 	Handler timeDisplayHandler;
 	Runnable timeDisplayRunnable;
+	private DataOutputStream fAcc = null, fLoc = null; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		openFileForWrite();
 		initVars();
 		initSensors();
 		initLocation();
@@ -101,6 +109,67 @@ public class Main extends Activity implements SensorEventListener,
 		mBikeLocation = new BikeLocation(mLocMan.getAllProviders());
 	}
 
+	private void openFileForWrite() {
+		try {
+			fAcc = new DataOutputStream(new FileOutputStream(file_location("_" + "Acc.txt")));
+			fLoc = new DataOutputStream(new FileOutputStream(file_location("_" + "Loc.txt")));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private File file_location(String ntag) {
+		
+		boolean mExternalStorageAvailable = false;
+		boolean mExternalStorageWriteable = false;
+		String state = Environment.getExternalStorageState();
+
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+		    // We can read and write the media
+		    mExternalStorageAvailable = mExternalStorageWriteable = true;
+		} else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+		    // We can only read the media
+		    mExternalStorageAvailable = true;
+		    mExternalStorageWriteable = false;
+		} else {
+		    mExternalStorageAvailable = mExternalStorageWriteable = false;
+		}
+		
+		if (mExternalStorageAvailable && mExternalStorageWriteable) {
+			String ftag="" + System.currentTimeMillis();
+			
+			return new File(getExternalFilesDir(null), ftag+ntag);
+		}
+		else {
+			return null;
+		}
+	}
+
+	private void writeToFile(String str, int swt) {
+		switch(swt) {
+		case 0:
+			if(fAcc != null) {
+				try {
+					fAcc.writeBytes(str);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			break;
+		case 1:
+			if(fLoc != null) {
+				try {
+					fLoc.writeBytes(str);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			break;
+		default:
+			break;	
+		}
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(android.view.Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -146,6 +215,25 @@ public class Main extends Activity implements SensorEventListener,
 		tvPower.setText("" + mBike.getPower());
 	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+		try {
+			if(fAcc != null) {
+				fAcc.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			if(fLoc != null) {
+				fLoc.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private void register_listeners() {
 		for (int i = 0; i < mBikeSensors.getNum(); i++) {
 			mSenMan.registerListener(this,
@@ -174,6 +262,7 @@ public class Main extends Activity implements SensorEventListener,
 			accX = event.values[0];
 			accY = event.values[1];
 			accZ = event.values[2];
+			writeToFile("" + accTim + " " + accX + " " + accY + " " + accZ + "\n", 0);
 		}
 	}
 
@@ -188,7 +277,9 @@ public class Main extends Activity implements SensorEventListener,
 		locLon = (float) loc.getLongitude();
 
 		tvSpeed.setText("" + locSpd * 3.6);
-
+		
+		writeToFile("" + locTim + " " + locAcc + " " + locLat + " " + locLon + 
+				" " + locSpd + " " + locAlt + " " + locBrg + "\n", 1);
 	}
 
 	@Override
